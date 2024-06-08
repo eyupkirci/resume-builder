@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume Builder</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
+      async></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"
+      async></script>
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div id="resume">
+      <div class="section" style="text-align: center" contenteditable="true">
+        <h2>Name Surname</h2>
+        <h3>Title</h3>
+      </div>
+      <div class="section" contenteditable="true">
+        <h2>Summary</h2>
+        <p>Your summary goes here...</p>
+        <div class="section-buttons" contenteditable="false">
+          <button class="delete-button" onclick="deleteSection(this)">Delete</button>
+          <button class="clear-button" onclick="clearContent(this)">Clear</button>
+        </div>
+      </div>
+      <div class="section" contenteditable="true">
+        <h2>Work Experience</h2>
+        <p>Your work experience goes here...</p>
+        <div class="section-buttons" contenteditable="false">
+          <button class="delete-button" onclick="deleteSection(this)">Delete</button>
+          <button class="clear-button" onclick="clearContent(this)">Clear</button>
+        </div>
+      </div>
+      <div class="section" contenteditable="true">
+        <h2>Education</h2>
+        <p>Your education goes here...</p>
+        <div class="section-buttons" contenteditable="false">
+          <button class="delete-button" onclick="deleteSection(this)">Delete</button>
+          <button class="clear-button" onclick="clearContent(this)">Clear</button>
+        </div>
+      </div>
+      <div class="section" contenteditable="true">
+        <h2>Projects</h2>
+        <p>Your projects go here...</p>
+        <div class="section-buttons" contenteditable="false">
+          <button class="delete-button" onclick="deleteSection(this)">Delete</button>
+          <button class="clear-button" onclick="clearContent(this)">Clear</button>
+        </div>
+      </div>
+      <div class="section" contenteditable="true">
+        <h2>Skills</h2>
+        <p>Your skills go here...</p>
+        <div class="section-buttons" contenteditable="false">
+          <button class="delete-button" onclick="deleteSection(this)">Delete</button>
+          <button class="clear-button" onclick="clearContent(this)">Clear</button>
+        </div>
+      </div>
+      <div id="new-section"></div>
+
+      <!-- Dropdown menu -->
+      <div class="dropdown section" id="addSectionDiv">
+        <select id="sectionSelect">
+          <option value="Summary">Summary</option>
+          <option value="Experience">Work Experience</option>
+          <option value="Education">Education</option>
+          <option value="Projects">Projects</option>
+          <option value="Courses">Courses</option>
+          <option value="Skills">Skills</option>
+          <option value="Volunteer Experience">Volunteer Experience</option>
+          <option value="Awards">Awards</option>
+          <option value="Custom">Add Custom Title</option>
+        </select>
+        <button onclick="addSection()">Add Section</button>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button onclick="downloadPDF()">Download as PDF</button>
+      <button onclick="reset()">Reset</button>
+    </div>
+  </body>
+</html>
