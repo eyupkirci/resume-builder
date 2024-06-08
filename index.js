@@ -1,24 +1,5 @@
 //FUNCTIONS
 
-function hideButtons() {
-  const actionButtons = document.querySelectorAll(".section-buttons");
-  const addSectionDiv = document.querySelector("#addSectionDiv");
-  actionButtons.forEach((button) => {
-    button.style.display = "none";
-  });
-  addSectionDiv.style.display = "none";
-}
-
-function showButtons() {
-  const actionButtons = document.querySelectorAll(".section-buttons");
-  const addSectionDiv = document.querySelector("#addSectionDiv");
-  // Show delete and clear buttons again
-  actionButtons.forEach((button) => {
-    button.style.display = "inline-block";
-  });
-  addSectionDiv.style.display = "block";
-}
-
 function addSection() {
   const select = document.getElementById("sectionSelect");
   const selectedOption = select.options[select.selectedIndex].value;
@@ -58,6 +39,25 @@ function addCustomSection() {
 }
 
 async function downloadPDF() {
+  const actionButtons = document.querySelectorAll(".section-buttons");
+  const addSectionDiv = document.querySelector("#addSectionDiv");
+
+  // Hides delete and clear buttons
+  function hideButtons() {
+    actionButtons.forEach((button) => {
+      button.style.display = "none";
+    });
+    addSectionDiv.style.display = "none";
+  }
+
+  // Show delete and clear buttons again
+  function showButtons() {
+    actionButtons.forEach((button) => {
+      button.style.display = "inline-block";
+    });
+    addSectionDiv.style.display = "block";
+  }
+
   // Hide delete and clear buttons for PDF generation
   hideButtons();
   // Load jsPDF module
