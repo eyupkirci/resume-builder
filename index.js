@@ -1,10 +1,8 @@
-//VARIABLES
-const actionButtons = document.querySelectorAll(".section-buttons");
-const addSectionDiv = document.querySelector("#addSectionDiv");
-
 //FUNCTIONS
 
 function hideButtons() {
+  const actionButtons = document.querySelectorAll(".section-buttons");
+  const addSectionDiv = document.querySelector("#addSectionDiv");
   actionButtons.forEach((button) => {
     button.style.display = "none";
   });
@@ -12,6 +10,8 @@ function hideButtons() {
 }
 
 function showButtons() {
+  const actionButtons = document.querySelectorAll(".section-buttons");
+  const addSectionDiv = document.querySelector("#addSectionDiv");
   // Show delete and clear buttons again
   actionButtons.forEach((button) => {
     button.style.display = "inline-block";
